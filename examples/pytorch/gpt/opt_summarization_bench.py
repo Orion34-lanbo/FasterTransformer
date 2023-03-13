@@ -21,7 +21,7 @@ import time
 import torch
 import torch.distributed as dist
 from datetime import datetime
-from datasets import load_dataset, load_metric
+from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 from tqdm import tqdm
 

@@ -51,7 +51,7 @@ AttentionType getAttentionType(size_t     size_per_head,
                                const bool with_swin_relative_position_bias = false,
                                const bool causal_mask                      = false)
 {
-
+    return remove_padding ? AttentionType::UNFUSED_MHA : AttentionType::UNFUSED_PADDED_MHA;
     if (std::is_same<T, half>::value && is_fuse) {
         // Bert/Vit
         if (!causal_mask) {

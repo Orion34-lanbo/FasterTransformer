@@ -269,6 +269,7 @@ public:
              void*        workspace,
              cudaStream_t stream)
     {
+        FT_LOG_INFO("run fp16 fmha kernel");
         params.qkv_ptr = const_cast<void*>(qkvPtr);
 
         params.packed_mask_ptr = const_cast<void*>(maskPtr);
@@ -288,6 +289,7 @@ public:
              void*        workspace,
              cudaStream_t stream)
     {
+        FT_LOG_INFO("run fp16 fmha kernel");
         params.qkv_ptr = const_cast<void*>(qkvPtr);
 
         params.packed_mask_ptr = const_cast<void*>(maskPtr);
@@ -305,6 +307,7 @@ public:
 
     void run_causal_masked_fmha(const void* qkvPtr, const void* cuSeqlenPtr, void* output, bool causal_mask, cudaStream_t stream)
     {
+        FT_LOG_INFO("run fp16 causal masked fmha kernel");
         params.qkv_ptr = const_cast<void*>(qkvPtr);
 
         params.o_ptr = output;
